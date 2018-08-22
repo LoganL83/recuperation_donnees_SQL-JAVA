@@ -1,0 +1,1 @@
+SELECT* FROM formations2.clients;
