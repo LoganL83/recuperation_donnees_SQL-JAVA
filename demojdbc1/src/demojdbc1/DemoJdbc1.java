@@ -10,12 +10,12 @@ public class DemoJdbc1 {
 
 	public static void main(String[] args) {
 
-		// 1ere étape : connexion
+		// 1ere Ã©tape : connexion
 		String url = "jdbc:mysql://localhost/formation2?useSSL=false";
 		String user = "root";
-		String pwd = "Legrosnunu1)";
+		String pwd = "";
 
-		// 2nde étape : chargement du driver
+		// 2nde Ã©tape : chargement du driver
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection cn = DriverManager.getConnection(url, user, pwd);
@@ -52,13 +52,13 @@ public class DemoJdbc1 {
 			int npVar;
 			String nompVar;
 
-			// nouvelle requête sqlVente
+			// nouvelle requÃªte sqlVente
 			String nomrVar;
 
-			// nouvelle requête sqlLyon
+			// nouvelle requÃªte sqlLyon
 			String nomc1Var;
 
-			// nouvelle requête sqlRepCli
+			// nouvelle requÃªte sqlRepCli
 			String nomRepresentant;
 			String nomClient;
 
@@ -72,32 +72,32 @@ public class DemoJdbc1 {
 				System.out.println("Numero Client : " + ncVar + ", NomClient : " + nomcVar + ", Ville : " + villeVar);
 
 			}
-			// nouvelle requête (2)
+			// nouvelle requÃªte (2)
 			ResultSet result2 = st.executeQuery(sqlRouge);
 			while (result2.next()) {
 				// recuperer le NP
 				npVar = result2.getInt("np");
 				// recuperer le nom du produit
 				nompVar = result2.getString("nomp");
-				System.out.println("Numéro produit : " + npVar + " Nom du produit : " + nompVar
-						+ " /produit de couleur rouge et d'un poids supérieur à 2000grammes.");
+				System.out.println("NumÃ©ro produit : " + npVar + " Nom du produit : " + nompVar
+						+ " /produit de couleur rouge et d'un poids supÃ©rieur Ã  2000grammes.");
 			}
-			// nouvelle requête (3)
+			// nouvelle requÃªte (3)
 			ResultSet result3 = st.executeQuery(sqlVente);
 			while (result3.next()) {
-				// recuperer nom du représentant
+				// recuperer nom du reprÃ©sentant
 				nomrVar = result3.getString("nomr");
-				System.out.println(nomrVar + " est un représentant ayant vendu au moins un produit");
+				System.out.println(nomrVar + " est un reprÃ©sentant ayant vendu au moins un produit");
 			}
-			// nouvelle requête (4)
+			// nouvelle requÃªte (4)
 			ResultSet result4 = st.executeQuery(sqlLyon);
 			while (result4.next()) {
 				// recuperer nom du client
 				nomcVar = result4.getString("nomc");
 				System.out.println(
-						nomcVar + " est un client de Lyon ayant acheté un produit pour une quantité superieur à 180.");
+						nomcVar + " est un client de Lyon ayant achetÃ© un produit pour une quantitÃ© superieur Ã  180.");
 			}
-			// nouvelle requête (5)
+			// nouvelle requÃªte (5)
 			ResultSet result5 = st.executeQuery(sqlRepCli);
 			while (result5.next()) {
 				// recuperer nom representant
@@ -105,7 +105,7 @@ public class DemoJdbc1 {
 				// recuperer nom client
 				nomRepresentant = result5.getString("nomr");
 				System.out.println(
-						nomClient + " a achete un produit de couleur rouge pour une quantité superieure a 100 à "
+						nomClient + " a achete un produit de couleur rouge pour une quantitÃ© superieure a 100 Ã  "
 								+ nomRepresentant);
 			}
 		} catch (ClassNotFoundException e) {
